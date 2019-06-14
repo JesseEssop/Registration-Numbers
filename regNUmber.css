@@ -272,10 +272,13 @@ li{
   color:black;
 } 
 strong{
-  color:black;
+  color:gold;
   font-size: 20px;
+  margin-top:  15px;
 }
 .Error{
-  color: gold;
-  font: bold;
+  margin-top: 30px;
+  color:red;
+  font-family: 'Lato', Helvetica, sans-serif;
+  font-size: 20px;
 }

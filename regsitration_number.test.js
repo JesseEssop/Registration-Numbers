@@ -24,6 +24,13 @@ describe('Registration Numbers test', function () {
         assert.equal(testInstance.add("CK"), undefined);
         assert.equal(testInstance.add("CY"), undefined);
     })
+    it('This test returns an error message when the same registration number is entered ', function () {
+        var testInstance = RegCheck();
+        testInstance.add("CA 364-968");
+        testInstance.add("CA 364-968");
+        assert.equal(testInstance.error(), "Registration number already entered");
+    })
+
 
 
 
