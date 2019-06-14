@@ -23,8 +23,6 @@ describe('Registration Numbers test', function () {
         assert.equal(testInstance.add("CA"), undefined);
         assert.equal(testInstance.add("CK"), undefined);
         assert.equal(testInstance.add("CY"), undefined);
-
-
     })
 
 
