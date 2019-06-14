@@ -3,7 +3,7 @@ function RegCheck(reg) {
     var errorMessage = "Enter valid registration number";
     var test = false;
 
-    var regex = /[A-Z]{2}\s\d[-0-9\s]{1,7}/;
+    var regex = /^[A-Z]{2}\s\d[0-9\s]{1,7}$/;
     var regExists = false;
 
 
@@ -14,21 +14,42 @@ function RegCheck(reg) {
     function addNewReg(oldReg) {
         var regNum = oldReg.toUpperCase().trim();
         var wack = regex.test(regNum);
+        console.log(wack)
 
         if (wack === true) {
-            if (regNum.startsWith("CA") === true || regNum.startsWith("CK") === true || regNum.startsWith("CY") === true) {
+            console.log(regNum)
 
+            if (regNum.startsWith("CA") || regNum.startsWith("CK") || regNum.startsWith("CY") === true) {
+                test = true;
                 if (regString[regNum] === undefined) {
-                    test = true;
                     regString[regNum] = 0;
-                } else {
-                    test = false;
                 }
-
             }
+            console.log(regString + " aaa")
+        }
+        else {
+            test = false;
         }
     }
 
+    function regPlace(town) {
+
+        var newReg = Object.keys(regString);
+ 
+        var newTown = [];
+
+       
+        for (var i = 0; i < newReg.length; i++) {
+            if (newReg[i].startsWith(town)) {
+                newTown.push(newReg[i])
+            }
+
+        }
+        console.log(newTown + " ME")
+        return newTown
+    }
+
+    
 
     function testResult() {
         return test;
@@ -37,11 +58,15 @@ function RegCheck(reg) {
     function displayReg() {
         return regString;
     }
+
+
+    
     return {
         add: addNewReg,
         records: displayReg,
         string: updateString,
         error: errorMessage,
-        testie: testResult
+        testie: testResult,
+        towntest: regPlace,
     }
 }

@@ -265,7 +265,6 @@ li{
  list-style-type: none;
  float:left;
  margin : 10px;
- -webkit-box-flex: initial;
 }
 .townDropDown{
   size: 20px;

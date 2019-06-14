@@ -3,24 +3,19 @@ var addBtn = document.querySelector(".addBtn");
 var dropDown = document.querySelector(".townDropDown");
 var existingReg = JSON.parse(localStorage.getItem("regNumber")) || {};
 var regList = document.querySelector("#regList");
-
+var resetBtn = document.querySelector(".resetBtn");
 
 var regInstance = RegCheck(existingReg);
-// var reggie = Object.keys(existingReg);
-
-
 
 addBtn.addEventListener('click', function () {
-
+    dropDown.value = "";
     regInstance.add(textArea.value);
     localStorage.setItem("regNumber", JSON.stringify(regInstance.records()));
-    if (regInstance.testie() === true) {
-        var reggieList = (textArea.value).toUpperCase();
-        printReg(reggieList);
-    } else {
-        regInstance.error();
+    var reggies = Object.keys(regInstance.records());
+    regList.innerHTML = '';
+    for (var z = 0; z < reggies.length; z++) {
+        printReg(reggies[z]);
     }
-
 })
 
 function printReg(regNum) {
@@ -32,11 +27,14 @@ function printReg(regNum) {
 
 
 dropDown.onchange = function () {
-    var regVal = document.getElementById("townDrop").value;
-    var reggieTest = regInstance.add(regVal);
-    for (n = 0; n < reggieTest.length; n++) {
-        addNewReggie(reggieTest[i]);
+    var regNum = regInstance.records();
+    var b = regInstance.towntest(dropDown.value);
+    regList.innerHTML = "";
+    for (var x = 0; x < b.length; x++) {
+        printReg(b[x]);
     }
+
+
 
 }
 window.onload = function () {
@@ -44,9 +42,13 @@ window.onload = function () {
     console.log(temp);
     regList.innerHTML = "";
     for (var x = 0; x < temp.length; x++) {
-        console.log(temp[x])
+        
         printReg(temp[x]);
     }
 
 
 }
+resetBtn.addEventListener('click', function () {
+    localStorage.clear();
+    regList.remove();
+})
