@@ -4,6 +4,8 @@ var dropDown = document.querySelector(".townDropDown");
 var existingReg = JSON.parse(localStorage.getItem("regNumber")) || {};
 var regList = document.querySelector("#regList");
 var resetBtn = document.querySelector(".resetBtn");
+var ErrorElement = document.querySelector(".Error")
+
 
 var regInstance = RegCheck(existingReg);
 
@@ -13,10 +15,12 @@ addBtn.addEventListener('click', function () {
     localStorage.setItem("regNumber", JSON.stringify(regInstance.records()));
     var reggies = Object.keys(regInstance.records());
     regList.innerHTML = '';
+    ErrorElement.innerHTML = regInstance.error();
     for (var z = 0; z < reggies.length; z++) {
         printReg(reggies[z]);
-    }
+}
 })
+
 
 function printReg(regNum) {
     var node = document.createElement("LI");
@@ -42,7 +46,7 @@ window.onload = function () {
     console.log(temp);
     regList.innerHTML = "";
     for (var x = 0; x < temp.length; x++) {
-        
+
         printReg(temp[x]);
     }
 
