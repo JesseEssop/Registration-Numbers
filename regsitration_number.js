@@ -3,7 +3,7 @@ function RegCheck(reg) {
     var errorMessage = "";
     var test = false;
 
-    var regex = /^[A-Z]{2}\s\d[-0-9\s]{1,7}$/;
+    var regex = /^[A-Z]{2}\s[-0-9\s]{3}\s[0-9]{3}$/;
 
 function messageService(){
     return errorMessage;

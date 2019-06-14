@@ -2,8 +2,10 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reggie Numbers</title>
     <link rel="stylesheet" href="regNUmber.css">
 
 
@@ -15,7 +17,7 @@
             <div class="box1">
                 <h1 class="center" style="margin-top:0px">Registration Numbers</h1>
             </div>
-
+        
             <div class="center" style="width:200px;" >
                 Enter Registration Number: <input class="textArea" type="string" value="" maxlength=10>
                 <span id="total"><span class="totalReg"> </span> </span>
@@ -23,13 +25,15 @@
                 <button class="button-primary resetBtn" on type="button" name="button">Reset</button>
             </div>
 
-            <div class="center" style="width:100px;margin-bottom:10px;margin-top:20px;">
+            <div class="center" style="width:200px;margin-bottom:10px;margin-top:20px;"> 
+                eg. CA 768 987
                 <select id = "townDrop" class="townDropDown">
                     <option name = "regType" value="">Select Town:</option>
                     <option name = "regType" value="CA">Cape Town</option>
                     <option name = "regType" value="CY">Bellville</option>
                     <option name = "regType" value="CK">Malmesbury</option>
                 </select>
+               
             </div>
             <div class="center">
             <div class="Error"> </div></div>

@@ -55,4 +55,5 @@ window.onload = function () {
 resetBtn.addEventListener('click', function () {
     localStorage.clear();
     regList.remove();
+    location.reload();
 })
