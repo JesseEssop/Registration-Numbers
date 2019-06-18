@@ -1,6 +1,6 @@
 function RegCheck(reg) {
     var regString = reg || {};
-    var errorMessage = "";
+    var errorMessage ;
     var test = false;
 
     var regex = /^[A-Z]{2}\s[-0-9\s]{3}\s[0-9]{3}$/;
