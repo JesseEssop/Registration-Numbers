@@ -18,7 +18,7 @@ addBtn.addEventListener('click', function () {
     ErrorElement.innerHTML = regInstance.error();
     for (var z = 0; z < reggies.length; z++) {
         printReg(reggies[z]);
-}
+    }
 })
 
 
@@ -37,10 +37,8 @@ dropDown.onchange = function () {
     for (var x = 0; x < b.length; x++) {
         printReg(b[x]);
     }
-
-
-
 }
+
 window.onload = function () {
     var temp = Object.keys(regInstance.records());
     console.log(temp);
@@ -49,9 +47,8 @@ window.onload = function () {
 
         printReg(temp[x]);
     }
-
-
 }
+
 resetBtn.addEventListener('click', function () {
     localStorage.clear();
     regList.remove();
