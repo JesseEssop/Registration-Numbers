@@ -7,8 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reggie Numbers</title>
     <link rel="stylesheet" href="regNUmber.css">
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script type="text/x-template" class="userTemplate">
+    <ul>
+    {{#each regNumber}}
+    <li class="reggieTemp">{{Reggie}}</li>
+    {{/each}}
+    </ul>
+    </script>
 </head>
 
 <body>
@@ -17,7 +23,7 @@
             <h1 class="center" style="margin-top:0px">Registration Numbers</h1>
         </div>
         <div class="row">
-            <div class="col-6 left" style="margin:0px;">
+            <div class="col-6 left">
                 <div class="center" style="width:200px;">
                     Enter Registration Number: <input class="textArea" type="string" value="" maxlength=10>
                     <span id="total"><span class="totalReg"> </span> </span>
@@ -47,7 +53,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-6 right" style="margin:0px;">
+            <div class="col-6 right">
                 <div class="center" style="width:200px;">
                     Enter Registration Number: <input class="textArea" type="string" value="" maxlength=10>
                     <span id="total"><span class="totalReg"> </span> </span>
@@ -84,4 +90,4 @@
 
 </body>
 <script src="regsitration_number.js"></script>
-<script src="regNUM.js"></script>
+    <script src="regNUM.js"></script>
