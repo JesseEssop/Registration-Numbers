@@ -1,13 +1,13 @@
 var textArea = document.querySelector(".textArea");
 var addBtn = document.querySelector(".addBtn");
 var dropDown = document.querySelector(".townDropDown");
-var existingReg = JSON.parse(localStorage.getItem("regNumber")) || {};
+
 var regList = document.querySelector("#regList");
 var resetBtn = document.querySelector(".resetBtn");
 var ErrorElement = document.querySelector(".Error")
 
-
-var regInstance = RegCheck(existingReg);
+var existingReg = JSON.parse(localStorage.getItem("regNumber"));
+var regInstance = RegCheck(existingReg)
 
 addBtn.addEventListener('click', function () {
     dropDown.value = "";
@@ -31,17 +31,18 @@ function printReg(regNum) {
 
 
 dropDown.onchange = function () {
-    var regNum = regInstance.records();
-    var b = regInstance.towntest(dropDown.value);
+    var regTown = dropDown.value;
+    var b = Object.keys(regInstance.towntest(regTown));
     regList.innerHTML = "";
     for (var x = 0; x < b.length; x++) {
         printReg(b[x]);
     }
+    console.log(b)
+
 }
 
 window.onload = function () {
     var temp = Object.keys(regInstance.records());
-    console.log(temp);
     regList.innerHTML = "";
     for (var x = 0; x < temp.length; x++) {
 

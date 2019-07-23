@@ -281,4 +281,8 @@ strong{
   color:red;
   font-family: 'Lato', Helvetica, sans-serif;
   font-size: 20px;
+}.townDropDownTemp{
+  size: 20px;
+  background-color:gold;
+  color:black;
 }

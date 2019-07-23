@@ -1,13 +1,13 @@
 function RegCheck(reg) {
     var regString = reg || {};
-    var errorMessage ;
+    var errorMessage;
     var test = false;
 
     var regex = /^[A-Z]{2}\s[-0-9\s]{3}\s[0-9]{3}$/;
 
-function messageService(){
-    return errorMessage;
-}
+    function messageService() {
+        return errorMessage;
+    }
 
     function updateString() {
         var regKey = Object.keys(regString);
@@ -26,13 +26,13 @@ function messageService(){
                 test = true;
                 if (regString[regNum] === undefined) {
                     regString[regNum] = 0;
-                }else{
+                } else {
                     errorMessage = "Registration number already entered"
                 }
             }
             // console.log(regString + " aaa")
         }
-        if(wack === false) {
+        if (wack === false) {
             test = false;
             console.log("test")
             errorMessage = "Enter valid registration number";
@@ -41,14 +41,16 @@ function messageService(){
 
     function regPlace(town) {
         var newReg = Object.keys(regString);
-        var newTown = [];
+        //console.log(newReg)
+        var newTown = {};
         for (var i = 0; i < newReg.length; i++) {
             if (newReg[i].startsWith(town)) {
-                newTown.push(newReg[i])
-            }
-}
+                newTown[newReg[i]] = 0;
+            } 
+        }
         //console.log(newTown + " ME")
         return newTown
+        
     }
 
 
@@ -58,7 +60,9 @@ function messageService(){
     }
 
     function displayReg() {
-        return regString;
+
+        var char = regString;
+        return char;
     }
 
 
@@ -67,9 +71,9 @@ function messageService(){
         add: addNewReg,
         records: displayReg,
         string: updateString,
-        error:messageService,
+        error: messageService,
         testie: testResult,
         towntest: regPlace,
-        
+
     }
 }

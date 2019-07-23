@@ -8,12 +8,13 @@
     <title>Reggie Numbers</title>
     <link rel="stylesheet" href="regNUmber.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script type="text/x-template" class="userTemplate">
+    <script type="text/x-template" class="userReggieTemplate">
     <ul>
     {{#each regNumber}}
-    <li class="reggieTemp">{{Reggie}}</li>
+    <li>{{this}}</li>
     {{/each}}
     </ul>
+    
     </script>
 </head>
 
@@ -31,7 +32,7 @@
                     <button class="button-primary resetBtn" on type="button" name="button">Reset</button>
                 </div>
 
-                <div class="center" style="width:200px;margin-bottom:10px;margin-top:20px;">
+                <div class="center" style="width:200px;margin-bottom:10px;margin-top:20px;color: whitesmoke">
                     eg. CA 768 987
                     <select id="townDrop" class="townDropDown">
                         <option name="regType" value="">Select Town:</option>
@@ -53,34 +54,38 @@
                     </ul>
                 </div>
             </div>
+            
+            
+            
+            
             <div class="col-6 right">
                 <div class="center" style="width:200px;">
-                    Enter Registration Number: <input class="textArea" type="string" value="" maxlength=10>
+                    Enter Registration Number: <input class="textAreaTemp" type="string" value="" maxlength=10>
                     <span id="total"><span class="totalReg"> </span> </span>
-                    <button class="button-primary addBtn" on type="button" name="button">Add</button>
-                    <button class="button-primary resetBtn" on type="button" name="button">Reset</button>
+                    <button class="button-primary addBtnTemp" on type="button" name="button">Add</button>
+                    <button class="button-primary resetBtnTemp" on type="button" name="button">Reset</button>
                 </div>
 
-                <div class="center" style="width:200px;margin-bottom:10px;margin-top:20px;">
+                <div class="center" style="width:200px;margin-bottom:10px;margin-top:23px;">
                     eg. CA 768 987
-                    <select id="townDrop" class="townDropDown">
-                        <option name="regType" value="">Select Town:</option>
-                        <option name="regType" value="CA">Cape Town</option>
-                        <option name="regType" value="CY">Bellville</option>
-                        <option name="regType" value="CK">Malmesbury</option>
+                    <select id="townDropTemp" class="townDropDownTemp">
+                        <option name="regTypeTemp" value="">Select Town:</option>
+                        <option name="regTypeTemp" value="CA">Cape Town</option>
+                        <option name="regTypeTemp" value="CY">Bellville</option>
+                        <option name="regTypeTemp" value="CK">Malmesbury</option>
                     </select>
 
                 </div>
 
                 <div class="center">
-                    <div class="Error"> </div>
+                    <div class="ErrorTemp"> </div>
                 </div>
 
-                <div class="center">
+                <div class="center" style="margin-top:35px;">
                     <strong>Registration Numbers:</strong>
-                    <ul id="regList">
+                    <div id="regListTemp">
 
-                    </ul>
+                    </div>
                 </div>
             </div>
 
@@ -89,5 +94,9 @@
 
 
 </body>
-<script src="regsitration_number.js"></script>
-    <script src="regNUM.js"></script>
+<script src="regsitration_number.js" charset="utf-8"></script>
+
+<script src="ReggieTemp.js" charset="utf-8"></script>
+<script src="regNUM.js" charset="utf-8"></script>
+
+</html>
