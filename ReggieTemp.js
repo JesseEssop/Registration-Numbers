@@ -11,7 +11,7 @@ var regUserTemp = Handlebars.compile(reggieTemp);
 var regDataElem = document.querySelector("#regListTemp");
 
 var existingRegTemp = JSON.parse(localStorage.getItem("RegNumTemp"));
-//console.log(existingRegTemp)
+
 
 var regInstanceTemp = RegCheck(existingRegTemp)
 
@@ -46,7 +46,6 @@ function showRegTemp () {
 dropDownTemp.onchange = function () {
     var choice = dropDownTemp.value;
     var bTemp = regInstanceTemp.towntest(choice);
-    console.log(bTemp)
     RegTemplate(bTemp); 
 }
 
@@ -55,5 +54,4 @@ dropDownTemp.onchange = function () {
 resetBtnTemp.addEventListener('click', function () {
     localStorage.clear();
     regListTemp.remove();
-    location.reload();
 })

@@ -37,7 +37,7 @@ dropDown.onchange = function () {
     for (var x = 0; x < b.length; x++) {
         printReg(b[x]);
     }
-    console.log(b)
+   
 
 }
 
@@ -53,5 +53,4 @@ window.onload = function () {
 resetBtn.addEventListener('click', function () {
     localStorage.clear();
     regList.remove();
-    location.reload();
 })
