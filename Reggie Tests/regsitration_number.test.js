@@ -1,12 +1,12 @@
 describe('Registration Numbers test', function () {
     it('This test only takes in a registration number that starts with CA, CY or CK', function () {
         var testInstance = RegCheck();
-        testInstance.add("CA 983 098");
-        assert.equal(testInstance.towntest("CA"), "CA 983 098");
+        testInstance.add("CA 983 098")
+        assert.deepEqual(testInstance.towntest("CA"), {"CA 983 098" : 0});
         testInstance.add("CK 278 399");
-        assert.equal(testInstance.towntest("CK"), "CK 278 399");
+        assert.deepEqual(testInstance.towntest("CK"), {"CK 278 399" : 0});
         testInstance.add("CY 180 701");
-        assert.equal(testInstance.towntest("CY"), "CY 180 701");
+        assert.deepEqual(testInstance.towntest("CY"), {"CY 180 701" :0});
     })
     it('This test does not take in a registration number that has special characters', function () {
         var testInstance = RegCheck();
@@ -30,8 +30,4 @@ describe('Registration Numbers test', function () {
         testInstance.add("CA 364 968");
         assert.equal(testInstance.error(), "Registration number already entered");
     })
-
-
-
-
 })

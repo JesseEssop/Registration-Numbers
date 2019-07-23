@@ -17,10 +17,10 @@ function RegCheck(reg) {
         errorMessage = "";
         var regNum = oldReg.toUpperCase().trim();
         var wack = regex.test(regNum);
-     
+
 
         if (wack === true) {
-           
+
 
             if (regNum.startsWith("CA") || regNum.startsWith("CK") || regNum.startsWith("CY") === true) {
                 test = true;
@@ -30,27 +30,24 @@ function RegCheck(reg) {
                     errorMessage = "Registration number already entered"
                 }
             }
-            
+
         }
         if (wack === false) {
             test = false;
-            
+
             errorMessage = "Enter valid registration number";
         }
     }
 
     function regPlace(town) {
         var newReg = Object.keys(regString);
-        
         var newTown = {};
         for (var i = 0; i < newReg.length; i++) {
             if (newReg[i].startsWith(town)) {
                 newTown[newReg[i]] = 0;
-            } 
+            }
         }
-    
         return newTown
-        
     }
 
 
