@@ -286,3 +286,10 @@ strong{
   background-color:gold;
   color:black;
 }
+.ErrorTemp{
+ margin-top: 15px;
+  margin-bottom: 5px;
+  color:red;
+  font-family: 'Lato', Helvetica, sans-serif;
+  font-size: 20px;
+}
