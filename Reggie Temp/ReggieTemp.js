@@ -24,7 +24,7 @@ function addReggieTemp() {
    localStorage.setItem("RegNumTemp", JSON.stringify(regInstanceTemp.records()));
 
     var reggiesTemp = regInstanceTemp.records();
-    
+    RegTemplate(reggiesTemp)
     ErrorTemp.innerHTML = regInstanceTemp.error();
     for (var z = 0; z < reggiesTemp.length; z++) {
         RegTemplate(reggiesTemp);
